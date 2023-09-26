@@ -1,6 +1,6 @@
 ﻿using Foundation;
 
-namespace maui_drawable_app
+namespace Toolkit.Maui.Shapes3D.Sample
 {
     [Register("AppDelegate")]
     public class AppDelegate : MauiUIApplicationDelegate

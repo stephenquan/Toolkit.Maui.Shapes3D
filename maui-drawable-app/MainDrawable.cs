@@ -1,6 +1,6 @@
 ﻿using Microsoft.Maui.Graphics;
 
-namespace maui_drawable_app;
+namespace Toolkit.Maui.Shapes3D.Sample;
 
 public class MainDrawable : IDrawable
 {
@@ -8,8 +8,9 @@ public class MainDrawable : IDrawable
     private MainViewModel VM
         => _vm ??= ServiceHelper.GetService<MainViewModel>();
 
+
     public void Draw(ICanvas canvas, RectF dirtyRect)
     {
-        VM.Cube.Draw(canvas, dirtyRect);
+        VM.Cube.Draw(canvas, dirtyRect, VM.Mode);
     }
 }

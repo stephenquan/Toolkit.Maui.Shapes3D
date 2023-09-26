@@ -1,15 +1,15 @@
-﻿namespace maui_drawable_app;
+﻿namespace Toolkit.Maui.Shapes3D.Sample;
 
 public partial class MainPage : ContentPage
 {
-    MainViewModel VM;
+    private MainViewModel VM { get; set; }
 
     public MainPage(MainViewModel VM)
     {
         this.VM = VM;
-        InitializeComponent();
-
+        BindingContext = VM;
         VM.Frame += OnFrame;
+        InitializeComponent();
     }
 
     ~MainPage()

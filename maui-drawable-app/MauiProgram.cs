@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
 
-namespace maui_drawable_app
+namespace Toolkit.Maui.Shapes3D.Sample
 {
     public static class MauiProgram
     {
@@ -19,7 +19,7 @@ namespace maui_drawable_app
 		builder.Logging.AddDebug();
 #endif
 
-            builder.Services.AddTransient<MainPage>();
+            builder.Services.AddSingleton<MainPage>();
             builder.Services.AddSingleton<MainViewModel>();
             return builder.Build();
         }

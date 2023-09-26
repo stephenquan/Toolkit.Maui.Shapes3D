@@ -1,7 +1,7 @@
 ﻿using Android.App;
 using Android.Runtime;
 
-namespace maui_drawable_app
+namespace Toolkit.Maui.Shapes3D.Sample
 {
     [Application]
     public class MainApplication : MauiApplication

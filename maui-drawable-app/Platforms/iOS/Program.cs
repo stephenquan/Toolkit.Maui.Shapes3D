@@ -1,7 +1,7 @@
 ﻿using ObjCRuntime;
 using UIKit;
 
-namespace maui_drawable_app
+namespace Toolkit.Maui.Shapes3D.Sample
 {
     public class Program
     {

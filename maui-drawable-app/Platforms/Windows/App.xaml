@@ -1,8 +1,8 @@
 ﻿<maui:MauiWinUIApplication
-    x:Class="maui_drawable_app.WinUI.App"
+    x:Class="Toolkit.Maui.Shapes3D.Sample.WinUI.App"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:maui="using:Microsoft.Maui"
-    xmlns:local="using:maui_drawable_app.WinUI">
+    xmlns:local="using:Toolkit.Maui.Shapes3D.Sample.WinUI">
 
 </maui:MauiWinUIApplication>

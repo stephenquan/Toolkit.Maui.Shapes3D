@@ -1,4 +1,4 @@
-﻿namespace maui_drawable_app;
+﻿namespace Toolkit.Maui.Shapes3D.Sample;
 
 public static class ServiceHelper
 {

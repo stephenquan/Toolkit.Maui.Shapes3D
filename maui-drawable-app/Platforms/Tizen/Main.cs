@@ -2,7 +2,7 @@ using Microsoft.Maui;
 using Microsoft.Maui.Hosting;
 using System;
 
-namespace maui_drawable_app
+namespace Toolkit.Maui.Shapes3D.Sample
 {
     internal class Program : MauiApplication
     {
