@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33829.357
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Toolkit.Maui.Shapes3D.Sample", "maui-drawable-app\Toolkit.Maui.Shapes3D.Sample.csproj", "{E0A563F2-08EE-489F-841D-27A45A43D352}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Toolkit.Maui.Shapes3D.Sample", "Toolkit.Maui.Shapes3D.Sample\Toolkit.Maui.Shapes3D.Sample.csproj", "{E0A563F2-08EE-489F-841D-27A45A43D352}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Toolkit.Maui.Shapes3D", "Toolkit.Maui.Shapes3D\Toolkit.Maui.Shapes3D.csproj", "{50B5C608-CD8B-4424-B135-0DA762E75A55}"
 EndProject
