@@ -2,19 +2,22 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:Toolkit.Maui.Shapes3D.Sample"
+             xmlns:shapes3d="clr-namespace:Toolkit.Maui.Shapes3D;assembly=Toolkit.Maui.Shapes3D"
              x:Class="Toolkit.Maui.Shapes3D.Sample.MainPage">
     
     <ContentPage.Resources>
         <ResourceDictionary>
-            <local:MainDrawable x:Key="drawable" />
         </ResourceDictionary>
     </ContentPage.Resources>
 
     <Grid RowDefinitions="*,Auto">
-        <GraphicsView
-            x:Name="graphicsView"
-            Drawable="{StaticResource drawable}"
-            BackgroundColor="Transparent"/>
+        <shapes3d:ShapesView3D
+            WidthRequest="400"
+            HeightRequest="400"
+            Points="{Binding CubePoints}"
+            Faces="{Binding CubeFaces}"
+            Transform="{Binding CubeTransform}"
+            Mode="{Binding Mode}" />
         <Button
             Grid.Row="1"
             Text="Toggle Render Mode"

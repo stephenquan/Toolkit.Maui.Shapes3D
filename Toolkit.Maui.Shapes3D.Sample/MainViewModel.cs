@@ -6,12 +6,10 @@ namespace Toolkit.Maui.Shapes3D.Sample;
 
 public class MainViewModel : INotifyPropertyChanged
 {
-    public bool Wireframe { get; set; } = true;
+    public bool Wireframe { get; set; } = false;
     public RenderMode Mode => Wireframe ? RenderMode.Wireframe : RenderMode.Solid;
 
-    public Shape3D Cube = new Shape3D()
-    {
-        Points = new List<Vector3>()
+    IList<Vector3> _cubePoints = new List<Vector3>()
         {
             new Vector3() { X = -100, Y = -100, Z = -100 },
             new Vector3() { X = 100, Y = -100, Z = -100 },
@@ -21,9 +19,10 @@ public class MainViewModel : INotifyPropertyChanged
             new Vector3() { X = 100, Y = -100, Z = 100 },
             new Vector3() { X = -100, Y = 100, Z = 100 },
             new Vector3() { X = 100, Y = 100, Z = 100 }
-        },
+        };
+    public IList<Vector3> CubePoints => _cubePoints;
 
-        Faces = new List<Face>()
+    IList<Face> _cubeFaces = new List<Face>()
         {
             new Face() { Vertices = new List<int> {1,0,2,3}, Color = Colors.Red },
             new Face() { Vertices = new List<int> {4,5,7,6}, Color = Colors.Orange },
@@ -31,12 +30,21 @@ public class MainViewModel : INotifyPropertyChanged
             new Face() { Vertices = new List<int> {1,3,7,5}, Color = Colors.White },
             new Face() { Vertices = new List<int> {0,1,5,4}, Color = Colors.Blue },
             new Face() { Vertices = new List<int> {3,2,6,7}, Color = Colors.Green }
+        };
+    public IList<Face> CubeFaces => _cubeFaces;
+
+    private Matrix4x4 _cubeTransform = Matrix4x4.Identity;
+    public Matrix4x4 CubeTransform
+    {
+        get => _cubeTransform;
+        set
+        {
+            _cubeTransform = value;
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(CubeTransform)));
         }
-    };
+    }
 
     private IDispatcherTimer _timer;
-
-    public EventHandler Frame;
 
     public Matrix4x4 Delta { get; set; } =
         Matrix4x4.Multiply(
@@ -47,14 +55,11 @@ public class MainViewModel : INotifyPropertyChanged
     public MainViewModel()
     {
         ToggleRenderModeCommand = new Command(() => ToggleRenderMode());
+
         PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(ToggleRenderModeCommand)));
         _timer = App.Current.Dispatcher.CreateTimer();
         _timer.Interval = TimeSpan.FromMilliseconds(10);
-        _timer.Tick += (s, e) =>
-        {
-            Cube.Transform = Matrix4x4.Multiply(Cube.Transform, Delta);
-            Frame?.Invoke(this, EventArgs.Empty);
-        };
+        _timer.Tick += (s, e) => { CubeTransform = Matrix4x4.Multiply(CubeTransform, Delta); };
         _timer.Start();
     }
 
